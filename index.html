@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de SKUs</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="inputDetails">
+        <h1>Gerador de SKU</h1>
+        
+        <input type="text" id="produto" placeholder="Nome do Produto" required>
+
+        <input type="text" id="marca" placeholder="Marca" required>
+
+        <input type="text" id="tipo" placeholder="Produto" required>
+
+        <input type="text" id="detalhe-cor" placeholder="Cor" required>
+
+        <input type="text" id="detalhe-tam" placeholder="Tamanho" required>
+
+        <input type="text" id="quantidade" placeholder="Quantidade" required>
+
+        <input type="text" id="code" placeholder="Código Único" readonly="">
+
+        
+        <div class="btns">
+            <div id="resultadoSKU"></div>
+            <button id="btnGerarSKU" onclick="getCode();">Gerar SKU</button>
+            <button id="btn" onclick="copyCode();">Copiar</button>
+            <button id="limparCampos">Limpar</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
