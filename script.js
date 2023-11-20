@@ -5,27 +5,12 @@ function gerarSKU () {
     const detalheCor = document.querySelector('#detalhe-cor').value.substring(0, 3).toUpperCase();
     const detalheTam = document.querySelector('#detalhe-tam').value.substring(0, 3).toUpperCase();
     const quantidade = document.querySelector('#quantidade').value.trim();
-    const codUnico = document.querySelector('#code').value;
 
     const quantidadePrimeiraLetra = quantidade.slice(0, 5);
 
-    const codigoSKU = `${nomeProduto}-${marcaProduto}-${tipoProduto}-${detalheCor}-${detalheTam}-${quantidadePrimeiraLetra}-${codUnico}`;
+    const codigoSKU = `${nomeProduto}${marcaProduto}${tipoProduto}${detalheCor}${detalheTam}${quantidadePrimeiraLetra}`;
 
     document.querySelector('#resultadoSKU').textContent = `${codigoSKU}`;
-}
-
-function getCode() {
-    
-    const chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&"
-    let codeLength = 8;
-    let code = "";
-
-    for (var i = 0; i < codeLength; i++) {
-        let randomCode = Math.floor(Math.random() * chars.length);
-        code += chars.substring(randomCode, randomCode+1);
-    }
-    
-    document.getElementById("code").value = code;
 }
 
 document.querySelector('#btnGerarSKU').addEventListener('click', gerarSKU);
@@ -44,8 +29,6 @@ function limparCampos () {
     document.querySelector('#detalhe-cor').value = '';
     document.querySelector('#quantidade').value = '';
     document.querySelector('#detalhe-tam').value = '';
-    document.querySelector('#resultadoSKU').value = '';
-    document.querySelector('#code').value = '';
     document.querySelector('#resultadoSKU').value = '';
 }
 
